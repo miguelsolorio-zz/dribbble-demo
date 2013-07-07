@@ -1,8 +1,10 @@
 class ShotsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index]
+
   # GET /shots
   # GET /shots.json
   def index
-    @shots = Shot.all
+    @shots = Shot.all #current_user.shots.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +26,7 @@ class ShotsController < ApplicationController
   # GET /shots/new
   # GET /shots/new.json
   def new
-    @shot = Shot.new
+    @shot = current_user.shots.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +36,13 @@ class ShotsController < ApplicationController
 
   # GET /shots/1/edit
   def edit
-    @shot = Shot.find(params[:id])
+    @shot = current_user.shots.find(params[:id])
   end
 
   # POST /shots
   # POST /shots.json
   def create
-    @shot = Shot.new(params[:shot])
+    @shot = current_user.shots.new(params[:shot])
 
     respond_to do |format|
       if @shot.save
@@ -56,7 +58,7 @@ class ShotsController < ApplicationController
   # PUT /shots/1
   # PUT /shots/1.json
   def update
-    @shot = Shot.find(params[:id])
+    @shot = current_user.shots.find(params[:id])
 
     respond_to do |format|
       if @shot.update_attributes(params[:shot])
@@ -72,7 +74,7 @@ class ShotsController < ApplicationController
   # DELETE /shots/1
   # DELETE /shots/1.json
   def destroy
-    @shot = Shot.find(params[:id])
+    @shot = current_user.shots.find(params[:id])
     @shot.destroy
 
     respond_to do |format|

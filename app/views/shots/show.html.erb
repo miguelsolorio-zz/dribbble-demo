@@ -3,7 +3,10 @@
   <div class="span6 offset3">
     <div class="well">
       <p><%= @shot.description %></p>
-      <%= link_to 'Edit', edit_shot_path(@shot) %> |
+      <p><%= @shot.user.name %></p>
+      <% if current_user == @shot.user %>
+        <%= link_to 'Edit', edit_shot_path(@shot) %> |
+      <% end %>
       <%= link_to 'Back', shots_path %>
     </div>
   </div>
