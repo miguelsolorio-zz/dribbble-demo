@@ -1,0 +1,6 @@
+<tr>
+  <td><%= shot.description %></td>
+  <td><%= link_to 'View', shot %></td>
+  <td><%= link_to 'Edit', edit_shot_path(shot) %></td>
+  <td><%= link_to 'Delete', shot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

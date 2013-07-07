@@ -1,4 +1,7 @@
 Dribbble::Application.routes.draw do
+  resources :shots
+
+
   devise_for :users
 
   get 'about' => 'pages#about'
