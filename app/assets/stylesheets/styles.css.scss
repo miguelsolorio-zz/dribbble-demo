@@ -1,0 +1,29 @@
+$baseFontFamily: Montserrat;
+$navbarBackgroundHighlight: white;
+$navbarBackground: white;
+$btnPrimaryBackground: teal;
+
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+@import 'bootstrap';
+
+body{
+  padding-top: 60px;
+}
+
+@import 'bootstrap-responsive';
+
+.navbar-inner{
+  @include box-shadow(none !important)
+}
+
+.hero-unit h1{
+  margin-bottom: 10px;
+}
+
+.footer{
+  margin-top: 60px;
+  color: $grayLight;
+  a {
+    color: $gray;
+  }
+}
