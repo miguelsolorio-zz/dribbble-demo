@@ -1,8 +1,9 @@
 <tr>
+  <td><%= link_to image_tag(shot.image(:thumb)), shot %></td>
   <td><%= shot.description %></td>
   <td><%= link_to 'View', shot %></td>
   <% if current_user == shot.user %>
-  <td><%= link_to 'Edit', edit_shot_path(shot) %></td>
-  <td><%= link_to 'Delete', shot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_shot_path(shot) %></td>
+    <td><%= link_to 'Delete', shot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   <% end %>
 </tr>

@@ -2,8 +2,9 @@
 <div class="row">
   <div class="span6 offset3">
     <div class="well">
+      <%= image_tag @shot.image %>
       <p><%= @shot.description %></p>
-      <p><%= @shot.user.name %></p>
+      <p>Created by <%= @shot.user.name %></p>
       <% if current_user == @shot.user %>
         <%= link_to 'Edit', edit_shot_path(@shot) %> |
       <% end %>
