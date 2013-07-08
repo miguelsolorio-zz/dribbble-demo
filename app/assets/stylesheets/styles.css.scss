@@ -29,8 +29,8 @@ body{
 }
 
 /* Required for jQuery Masonry */
-#shots{
-  overflow: auto;
+.clear{
+  // clear: both;
 }
 .box{
   margin: 5px;

@@ -5,3 +5,12 @@
 jQuery ->
   $('#shots').imagesLoaded ->
     $('#shots').masonry itemSelector: ".box"
+
+    if $('.pagination').length
+      $(window).scroll ->
+        url = $('.pagination .next_page a').attr('href')
+        if url && $(window).scrollTop() > $(document).height() - $(window).height() - 100
+          # What to do at the bottom of the page
+          $('.pagination').text("Fetching more shots...")
+          $.getScript(url)
+          $(window).scroll()

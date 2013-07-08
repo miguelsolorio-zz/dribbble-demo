@@ -9,7 +9,9 @@ class ShotsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @shots }
+      format.js
     end
+
   end
 
   # GET /shots/1

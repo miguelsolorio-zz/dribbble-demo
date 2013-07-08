@@ -4,7 +4,7 @@
     <div class="well">
       <%= image_tag @shot.image %>
       <p><%= @shot.description %></p>
-      <p>Added by <%= link_to @shot.user.name, shot.user %></p>
+      <p>Added by <%= link_to @shot.user.name, @shot.user %></p>
       <% if current_user == @shot.user %>
         <%= link_to 'Edit', edit_shot_path(@shot) %> |
       <% end %>
