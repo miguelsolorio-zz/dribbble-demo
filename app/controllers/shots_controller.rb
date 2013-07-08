@@ -4,7 +4,7 @@ class ShotsController < ApplicationController
   # GET /shots
   # GET /shots.json
   def index
-    @shots = Shot.order('created_at desc')
+    @shots = Shot.order('created_at desc').page(params[:page]).per_page(20)
 
     respond_to do |format|
       format.html # index.html.erb
