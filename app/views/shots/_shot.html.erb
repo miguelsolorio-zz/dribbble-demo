@@ -1,7 +1,7 @@
 <div class="box">
   <%= link_to image_tag(shot.image(:medium)), shot %>
   <p class="description"><%= shot.description %></p>
-  <p><strong>Posted by <%= shot.user.name %></strong></p>
+  <p><strong>Added by <%= link_to shot.user.name, shot.user %></strong></p>
   <p><% if current_user == shot.user %>
     <%= link_to 'Edit', edit_shot_path(shot) %> |
     <%= link_to 'Delete', shot, method: :delete, data: { confirm: 'Are you sure?' } %>

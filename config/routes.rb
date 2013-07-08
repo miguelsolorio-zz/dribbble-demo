@@ -1,8 +1,10 @@
 Dribbble::Application.routes.draw do
+  get 'users/show'
+
   resources :shots
 
-
   devise_for :users
+  match 'users/:id' => 'users#show', as: :user
 
   get 'about' => 'pages#about'
 
